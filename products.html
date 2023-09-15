@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <title>EkuTrade</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="images/Ekurhuleni-Favicon.png">
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="css/fontawesome-free/css/all.min.css">
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="css/bootstrap5-css/css/bootstrap.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="css/css/select2.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="css/adminlte.min.css">
+  <!-- Charts JS -->
+  <link rel="stylesheet" href="css/Chart.min.css">
+  <!-- Custom style -->
+  <link rel="stylesheet" href="css/custom.css">
+  <style>
+    #bg-background{
+        background-color:#fff;
+        padding:10px;
+        border-radius:5px;
+    }
+    #product{
+        margin: 0 9%;
+        padding:5px;
+        clear:both;
+        height: auto;
+    }
+    #p_list{
+        width:200px;
+        max-width:200px;
+        /* height:260px; */
+        padding:5px;
+        /* border:1px solid #000; */
+        float:left;
+        margin:15px;
+    }
+    #p_list img{
+        height:150px; 
+        width:150px;
+    }
+  </style>
+</head>
+<body class="hold-transition sidebar-mini layout-fixed" ng-app="shoppingcart" ng-controller="shoppingCTR">
+  <div class="wrapper">
+      <!-- Navbar -->
+      <nav class="main-header navbar navbar-expand navbar-teal navbar-light">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <a href="#" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <a class="nav-link"><i class="fa fa-user-circle" aria-hidden="true"></i> Kgotso Motlhatswi</a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <a class="nav-link"><i class="fa fa-id-card" aria-hidden="true"></i> Code: 00000/00/00</a>
+          </li>
+          <!-- <li class="nav-item d-none d-sm-inline-block">
+            <a href="#" class="nav-link">Contact</a>
+          </li> -->
+        </ul>
+      </nav>
+      <!-- /.navbar -->
+
+      <!-- Main Sidebar Container -->
+      <aside class="main-sidebar sidebar-dark-primary elevation-4" id="aside_admin">
+        <!-- Brand Logo -->
+        <a href="#" class="brand-link">
+          <img src="images/CoE_Logo-02.png" alt="coe_Logo" class="" style="width: 46px; height: 50px; float: left; line-height: .8; margin-left: .5rem; margin-right: .5rem; margin-top: -11px; max-height: 50px;">
+          <span class="brand-text font-weight-light"><b>Eku</b>Trade</span>
+        </a>
+    
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <!-- Sidebar user panel (optional) -->
+          <!-- <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+              <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+            </div>
+            <div class="info">
+              <a href="#" class="d-block">Alexander Pierce</a>
+            </div>
+          </div> -->
+    
+          <!-- SidebarSearch Form -->
+          <!-- <div class="form-inline">
+            <div class="input-group" data-widget="sidebar-search">
+              <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-sidebar">
+                  <i class="fas fa-search fa-fw"></i>
+                </button>
+              </div>
+            </div>
+          </div> -->
+    
+          <!-- Sidebar Menu -->
+          <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+              <!-- Add icons to the links using the .nav-icon class
+                   with font-awesome or any other icon font library -->
+              <li class="nav-item">
+                  <a href="http://localhost/ekutrade/starter.html" class="nav-link">
+                    <i class="nav-icon fas fa-home"></i>
+                    <p>
+                      Home
+                    </p>
+                  </a>
+              </li>
+    
+              <li class="nav-item menu-open"><!-- <li class="nav-item menu-open"></li> -->
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-chart-area"></i>
+                  <p>
+                    Sales Management
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="http://localhost/ekutrade/orders.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Orders</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+    
+              <li class="nav-item menu-open"><!-- <li class="nav-item menu-open"></li> -->
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-seedling"></i>
+                  <p>
+                    Product Listing
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="http://localhost/ekutrade/products.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Products</p>
+                    </a>
+                  </li>
+                  <!-- <li class="nav-item">
+                    <a href="http://localhost/ekutrade/product-cabbage.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Products-Cabbage</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="http://localhost/ekutrade/product-tomatoes.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Products-Tomatoes</p>
+                    </a>
+                  </li> -->
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Deliveries</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+    
+              <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-chart-pie"></i>
+                    <p>
+                      Analytics
+                    </p>
+                  </a>
+              </li>
+    
+              <li class="nav-item menu-open"><!-- <li class="nav-item menu-open"></li> -->
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-credit-card"></i>
+                  <p>
+                    Payments
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Receivables</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+    
+              <!-- <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-wifi"></i>
+                  <p>
+                    Communication
+                  </p>
+                </a>
+              </li> -->
+              <li class="nav-item menu-open"><!-- <li class="nav-item menu-open"></li> -->
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-wifi"></i>
+                  <p>
+                    Communication
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="http://localhost/ekutrade/mail-inbox.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Inbox</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="http://localhost/ekutrade/mail-compose.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Compose</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+    
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-sign-out-alt"></i>
+                  <p>
+                    Logout
+                  </p>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+      </aside>
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1 class="m-0">Product Listing</h1>
+              </div>
+            </div><!-- /.row -->
+          </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+    
+        <!-- Main content -->
+        <div class="content">
+          <div class="container-fluid">
+            <form action="#">
+              <div class="row">
+                  <div class="col-md-10 offset-md-1">
+                      <div class="row">
+                          <div class="col-6">
+                              <div class="form-group">
+                                  <label>Product Type:</label>
+                                  <select class="select2" data-placeholder="Any" style="width: 100%;">
+                                      <option>Cabbage</option>
+                                      <option>Tomatoes</option>
+                                      <option>Potatoes</option>
+                                      <option>Pumpkin</option>
+                                      <option>Mixed Vegtables</option>
+                                      <option>Simmons</option>
+                                  </select>
+                              </div>
+                          </div>
+                          <div class="col-3">
+                              <div class="form-group">
+                                  <label>Grading:</label>
+                                  <select class="select2" style="width: 100%;">
+                                      <option selected>A</option>
+                                      <option>B</option>
+                                      <option>C</option>
+                                  </select>
+                              </div>
+                          </div>
+                          <div class="col-3">
+                              <div class="form-group">
+                                  <label>Price Range:</label>
+                                  <select class="select2" style="width: 100%;">
+                                      <option selected>R10 - 100</option>
+                                      <option>R100 - 200</option>
+                                      <option>R200 - 300</option>
+                                      <option>R300 - 400</option>
+                                      <option>R400 - 500</option>
+                                      <option>R600 - 700</option>
+                                      <option>R700 - 800</option>
+                                      <option>R800 - 900</option>
+                                      <option>R900 - 1000</option>
+                                  </select>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <div class="input-group">
+                              <input type="search" class="form-control" placeholder="Type your keywords here" value="Lorem ipsum">
+                              <div class="input-group-append">
+                                  <button type="submit" class="btn btn-default">
+                                      <i class="fa fa-search"></i>
+                                  </button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </form>
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-12">
+                <!-- <h4>Products</h4> -->
+                <div id = "product">
+                  <div id = "p_list" ng-repeat = "product in products ">
+                    <div class="card card-primary card-outline">
+                      <div class="card-header">
+                        <span style="font-size:16px;">{{product.p_name}}</span>
+                      </div>
+                      <div class="card-body">
+                        <center><a href="{{product.p_url}}"><img ng-src = "{{product.p_image}}"/></a></center>
+                        <!-- <div><label style="font-size:14px;">Price: R {{product.p_price}}</label></div> -->
+                        <!-- <center><button type = "button" class="btn btn-primary" ng-click = "add_cart(product)"> Add to cart</button></center> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="col-md-4 col-sm-4 col-12">
+                <h4>Shopping Cart</h4>
+                <div class = "panel-body table-responsive">
+                  <table class="table table-bordered table-striped">
+                      <thead>
+                          <tr>
+                              <th>Product</th>
+                              <th>Price</th>
+                              <th>Action</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr ng-repeat = "cart in carts" ng-init = "setTotals(cart)">
+                              <td>{{cart.p_name}}</td>
+                              <td>R {{cart.p_price}}</td>
+                              <td><button type = "button" ng-click = "remove_cart(cart)" class = "btn btn-danger"> X</button></td>
+                          </tr>
+                          <tr>
+                              <td align="Left"><b>Total Amount</b></td>
+                              <td colspan="2"><center><b>R {{total}}</b></center></td>
+                          </tr>
+                          <tr> 
+                            <td colspan="3">
+                              <center><button type="button" class="btn btn-warning"><i class="fas fa-cart-plus"></i> Checkout: R{{total}}</button></center>
+                            </td>
+                          </tr>
+                      </tbody>
+                  </table>
+                </div>
+              </div> -->
+            </div>
+          </div><!-- /.container-fluid -->
+        </div>
+      </div>
+      <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <!-- To the right -->
+    <!-- <div class="float-right d-none d-sm-inline">
+      Anything you want
+    </div> -->
+    <!-- Default to the left -->
+    <strong>Copyright &copy;<!--  <a href="https://adminlte.io">AdminLTE.io</a>.</strong> --> All rights reserved.
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+<!-- Angular JS -->
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<!-- jQuery -->
+<script src="js/jquery/jquery.min.js"></script>
+<!-- Custom Angular JS -->
+<script>
+  var app = angular.module("shoppingcart", [])
+  .controller("shoppingCTR", function($scope){
+      $scope.carts=[];
+      $scope.products = [
+          {p_id: "1", p_name: "Cabbage", p_image: "images/product/cabbage.jpg", p_price: 30, p_url: "http://localhost/ekutrade/product-cabbage.html",},
+          {p_id: "2", p_name: "Tomatoes", p_image: "images/product/tomatoes.jpg", p_price: 10, p_url: "http://localhost/ekutrade/product-tomatoes.html",},
+          {p_id: "3", p_name: "Potatoes", p_image: "images/product/potatoes.jpg", p_price: 20, p_url: "#",},
+          {p_id: "4", p_name: "Pumpkin", p_image: "images/product/pumking.jpg", p_price: 25, p_url: "#",},
+          {p_id: "5", p_name: "Mixed Vegtables", p_image: "images/product/mixedVeg.jpg", p_price: 60, p_url: "#",},
+          {p_id: "6", p_name: "Simmons", p_image: "images/product/simmons.jpg", p_price: 15, p_url: "#",},
+          {p_id: "7", p_name: "Banana", p_image: "images/product/Banana.png", p_price: 30, p_url: "#",},
+          {p_id: "8", p_name: "Cauliflower", p_image: "images/product/Cauliflower.png", p_price: 10, p_url: "#",},
+          {p_id: "9", p_name: "Pawpaw", p_image: "images/product/Pawpaw.png", p_price: 20, p_url: "#",},
+          {p_id: "10", p_name: "Mushroom", p_image: "images/product/Mushroom.png", p_price: 25, p_url: "#",},
+          {p_id: "11", p_name: "Nectarines", p_image: "images/product/Nectarines.png", p_price: 60, p_url: "#",},
+          {p_id: "12", p_name: "Pineapples", p_image: "images/product/Pineapples.png", p_price: 15, p_url: "#",},
+      ];
+                   
+      $scope.add_cart = function(product){
+          if(product){
+              $scope.carts.push({p_id: product.p_id, p_name: product.p_name, p_price: product.p_price});
+          }   
+      }
+                           
+      $scope.total = 0;
+                   
+      $scope.setTotals = function(cart){
+          if(cart){
+              $scope.total += cart.p_price;
+          }
+      }
+                   
+      $scope.remove_cart = function(cart){
+          if(cart){
+              $scope.carts.splice($scope.carts.indexOf(cart), 1);
+              $scope.total -= cart.p_price;
+          }
+      }
+  });
+</script>
+<!-- Bootstrap 4 -->
+<script src="js/bootstrap5-js/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="js/adminlte.min.js"></script>
+<!-- Select2 -->
+<script src="js/js/select2.full.min.js"></script>
+<script>
+  $(function () {
+    $('.select2').select2()
+  });
+</script>
+</body>
+</html>

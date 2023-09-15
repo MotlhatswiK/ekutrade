@@ -16,6 +16,8 @@
   <link rel="stylesheet" href="css/bootstrap5-css/css/bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="css/adminlte.min.css">
+  <!-- Charts JS -->
+  <link rel="stylesheet" href="css/Chart.min.css">
   <!-- Custom style -->
   <link rel="stylesheet" href="css/custom.css">
 </head>
@@ -31,6 +33,12 @@
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a class="nav-link"><i class="fa fa-user-circle" aria-hidden="true"></i> Kgotso Motlhatswi</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a class="nav-link"><i class="fa fa-id-card" aria-hidden="true"></i> Code: 00000/00/00</a>
       </li>
       <!-- <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -77,7 +85,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="http://localhost/ekutrade/starter.html" class="nav-link">
                 <i class="nav-icon fas fa-home"></i>
                 <p>
                   Home
@@ -95,7 +103,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="http://localhost/ekutrade/orders.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Orders</p>
                 </a>
@@ -112,6 +120,24 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="http://localhost/ekutrade/products.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Products</p>
+                </a>
+              </li>
+              <!-- <li class="nav-item">
+                <a href="http://localhost/ekutrade/product-cabbage.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Products-Cabbage</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="http://localhost/ekutrade/product-tomatoes.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Products-Tomatoes</p>
+                </a>
+              </li> -->
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -148,13 +174,36 @@
             </ul>
           </li>
 
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-wifi"></i>
               <p>
                 Communication
               </p>
             </a>
+          </li> -->
+          <li class="nav-item menu-open"><!-- <li class="nav-item menu-open"></li> -->
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-wifi"></i>
+              <p>
+                Communication
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="http://localhost/ekutrade/mail-inbox.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Inbox</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="http://localhost/ekutrade/mail-compose.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Compose</p>
+                </a>
+              </li>
+            </ul>
           </li>
 
           <li class="nav-item">
@@ -172,42 +221,259 @@
     <!-- /.sidebar -->
   </aside>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
-          </div><!-- /.col -->
-          <!-- <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Starter Page</li>
-            </ol>
-          </div> --><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0">Dashboard</h1>
+            </div><!-- /.col -->
+            <!-- <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active">Starter Page</li>
+              </ol>
+            </div> --><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.content-header -->
 
-    <!-- Main content -->
-    <div class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-6">
+      <!-- Main content -->
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-3 col-sm-6 col-12">
+              <div class="info-box">
+                <span class="info-box-icon bg-info"><i class="far fa-envelope"></i></span>
+
+                <div class="info-box-content">
+                  <span class="info-box-text">Messages</span>
+                  <span class="info-box-number">1,410</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-3 col-sm-6 col-12">
+              <div class="info-box">
+                <span class="info-box-icon bg-success"><i class="far fa-flag"></i></span>
+
+                <div class="info-box-content">
+                  <span class="info-box-text">Bookmarks</span>
+                  <span class="info-box-number">410</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-3 col-sm-6 col-12">
+              <div class="info-box">
+                <span class="info-box-icon bg-warning"><i class="far fa-copy"></i></span>
+
+                <div class="info-box-content">
+                  <span class="info-box-text">Uploads</span>
+                  <span class="info-box-number">13,648</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-3 col-sm-6 col-12">
+              <div class="info-box">
+                <span class="info-box-icon bg-danger"><i class="far fa-star"></i></span>
+
+                <div class="info-box-content">
+                  <span class="info-box-text">Hits</span>
+                  <span class="info-box-number">93,139</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
           </div>
-          <!-- /.col-md-6 -->
-          <div class="col-lg-6">
+          
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Card Details</h5>
+
+                  <p class="card-text">
+                    Some quick example text to build on the card details and make up the bulk of the card's
+                    content.
+                  </p>
+
+                  <a href="#" class="card-link">Link Card</a>
+                  <a href="#" class="card-link">Add Another Card</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="card card-primary card-outline">
+                <div class="card-body">
+                  <h5 class="card-title">C2C Trade Connections</h5>
+
+                  <p class="card-text">
+                    Some quick example text to build on the C2C Trade Connections details and make up the bulk of the
+                    content.
+                  </p>
+                  <a href="#" class="card-link">View Linked Customers</a>
+                  <a href="#" class="card-link">Product Request</a>
+                </div>
+              </div><!-- /.card -->
+            </div>
+
+            <div class="col-lg-6">
+              <div class="card card-primary card-outline">
+                <div class="card-header">
+                  <h5 class="m-0">Available Stock</h5>
+                </div>
+                <div class="card-body">
+                  <table class="table table-bordered table-striped">
+                    <thead>
+                      <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Image</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Tomatoes</td>
+                        <td>126</td>
+                        <td><center><a href="http://localhost/ekutrade/product-tomatoes.html"><img src="images/product/tomatoes.jpg" alt="tomatoes" style="width: 60px;"></a></center></td>
+                      </tr>
+                      <tr>
+                        <td>Cabbage</td>
+                        <td>99</td>
+                        <td><center><a href="http://localhost/ekutrade/product-cabbage.html"><img src="images/product/cabbage.jpg" alt="cabbage" style="width: 60px;"></a></center></td>
+                      </tr>
+                      <tr>
+                        <td>Simmons</td>
+                        <td>3</td>
+                        <td><center><a href="#"><img src="images/product/simmons.jpg" alt="simmons" style="width: 60px;"></a></center></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- /.col-md-6 -->
+
+            <!-- <div class="col-md-6">
+              !-- AREA CHART --
+              <div class="card card-primary">
+                <div class="card-header">
+                  <h3 class="card-title">Sales Management Chart</h3>
+
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                      <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove">
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="chart">
+                    <canvas id="areaChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                  </div>
+                </div>
+                -- /.card-body --
+              </div>
+              -- /.card --
+            </div> -->
+            <div class="col-md-3 col-sm-6 col-12">
+              <div class="info-box bg-info">
+                <span class="info-box-icon"><i class="fas fa-wallet"></i></span>
+
+                <div class="info-box-content">
+                  <span class="info-box-text">Balance</span>
+                  <span class="info-box-number">R 1,410</span>
+
+                  <div class="progress">
+                    <div class="progress-bar" style="width: 70%"></div>
+                  </div>
+                  <span class="progress-description">
+                    R 410 Added 30 Days ago
+                  </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-3 col-sm-6 col-12">
+              <div class="info-box bg-success">
+                <span class="info-box-icon"><i class="far fa-thumbs-up"></i></span>
+
+                <div class="info-box-content">
+                  <span class="info-box-text">Likes</span>
+                  <span class="info-box-number">41,410</span>
+
+                  <div class="progress">
+                    <div class="progress-bar" style="width: 70%"></div>
+                  </div>
+                  <span class="progress-description">
+                    70% Increase in 30 Days
+                  </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div>
           </div>
-          <!-- /.col-md-6 -->
-        </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
+          <!-- /.row -->
+
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="m-0">My Wallet</h5>
+                </div>
+                <div class="card-body">
+                  <h6 class="card-title">Information on My Wallet</h6>
+
+                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo veniam minus quis assumenda earum rem deserunt fugiat
+                    dolorem maxime adipisci, amet corrupti accusamus sit dolore sequi repellat a quasi libero.</p>
+                  <a href="#" class="btn btn-primary">View Transactions</a>
+                  <a href="#" class="btn btn-primary">Top Up</a>
+                  <a href="#" class="btn btn-danger">Get Receipt</a>
+                  <a href="#" class="btn btn-warning">Checkout</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="card card-primary card-outline">
+                <div class="card-header">
+                  <h5 class="m-0">Communication</h5>
+                </div>
+                <div class="card-body">
+                  <h6 class="card-title">Special title treatment</h6>
+
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go To Inbox</a>
+                  <a href="#" class="btn btn-warning">Compose</a>
+                </div>
+              </div>
+            </div>
+            <!-- /.col-md-6 -->
+          </div>
+        </div><!-- /.container-fluid -->
+      </div>
     </div>
     <!-- /.content -->
-  </div>
+  
   <!-- /.content-wrapper -->
 
   <!-- Main Footer -->
